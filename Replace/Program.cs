@@ -13,7 +13,7 @@ namespace Replace
             char search = Console.ReadLine()[0];
             Console.WriteLine("What character to replace to?");
             char replace = Console.ReadLine()[0];
-            string result = Replace(response, search, replace);
+            string result = response.Replace(search, replace);
             Console.WriteLine(result);
         }
         public static string Replace(string text, char a, char b)

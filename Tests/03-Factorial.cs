@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,7 +13,8 @@ namespace Tests
         {
             //Arrange
             List<float> numbers = new List<float>();
-            for (int i = 0; i < Utils.random.Next() % 100; i++)
+            int count = Utils.random.Next() % 100;
+            for (int i = 0; i < count; i++)
             {
                 numbers.Add(Utils.random.Next() % 100);
             }
@@ -23,6 +25,7 @@ namespace Tests
             //Assert
             Assert.AreEqual(resultOK, result);
         }
+            
         [TestMethod]
         public void For_Test()
         {

@@ -13,15 +13,13 @@ namespace Palindrome
         }
         public static string Palindrome(string text)
         {
-            StringBuilder sb = new StringBuilder();
-
-            sb.Append(text);
-            for (int i = 0; i < text.Length; i++)
+            string reversedText = " ";
+            for (int i = text.Length - 1; i >= 0; i--)
             {
-                sb.Append(text[i]);
+                reversedText += text[i];
             }
-
-            return sb.ToString();
+            return text + reversedText;
         }
     }
 }
+

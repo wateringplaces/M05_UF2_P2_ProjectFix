@@ -8,17 +8,18 @@ namespace Sorting
         static void Main(string[] args)
         {
             Console.WriteLine("Unordered list: ");
-            List<int> list = new List<int>(100);
+            List<int> list = new List<int>();
             for (int i = 0; i < 100; i++)
             {
-                list.Add(Utils.random.Next());
+                list.Add(Utils.random.Next(100));
                 Console.WriteLine(list[i]);
             }
 
             list = Sort(list);
             Console.WriteLine("Ordered list: ");
-            for (int i = 0; i < 100; i++)
+            for (int i = 100 - 1; i >= 0; i--)
             {
+                list.Sort();
                 Console.WriteLine(list[i]);
             }
         }
@@ -29,3 +30,6 @@ namespace Sorting
         }
     }
 }
+
+
+

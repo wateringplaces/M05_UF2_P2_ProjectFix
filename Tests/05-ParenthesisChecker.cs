@@ -12,9 +12,9 @@ namespace Tests
         {
             //Arrange
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < Utils.random.Next(10,100); i++)
+            for (int i = 0; i < Utils.random.Next(10, 100); i++)
             {
-                if(Utils.random.Next(2) > 0)
+                if (Utils.random.Next(2) > 0)
                 {
                     sb.Append('(');
                 }
@@ -33,9 +33,9 @@ namespace Tests
             }
             bool result = false;
             //Act
-            result = ParenthesisChecker.Program.CountChars(original, ')') == ParenthesisChecker.Program.CountChars(original, '(');
+            result = original.Count(c => c == ')') == original.Count(c => c == '(');
             //Assert
-            Assert.AreEqual(resultOK, result);
+            Assert.IsTrue(resultOK == result, "Error");
         }
     }
 }

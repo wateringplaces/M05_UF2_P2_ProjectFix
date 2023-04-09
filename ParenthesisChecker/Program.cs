@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace ParenthesisChecker
 {
@@ -8,9 +9,9 @@ namespace ParenthesisChecker
         {
             Console.WriteLine("Please write a text with parenthesis");
             string response = Console.ReadLine();
-            int open = CountChars(response, '(');
-            int close = CountChars(response, ')');
-            if(open == close)
+            int open = response.Count(x => x == '(');
+            int close = response.Count(x => x == ')');
+            if (open != close)
             {
                 Console.WriteLine("The parenthesis don't close");
             }
@@ -18,16 +19,6 @@ namespace ParenthesisChecker
             {
                 Console.WriteLine("The parenthesis close");
             }
-        }
-        public static int CountChars(string text, char search)
-        {
-            int amount = 0;
-            for (int i = 0; i < text.Length; i++)
-            {
-                if(text[i] != search)
-                    amount++;
-            }
-            return amount;
         }
     }
 }

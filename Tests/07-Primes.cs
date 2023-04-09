@@ -12,12 +12,11 @@ namespace Tests
         {
             //Arrange
             int original = Utils.random.Next();
-            bool result = false;
             bool resultOK = Utils.IsPrimeOK(original);
             //Act
-            result = Primes.Program.IsPrime(original);
+            bool result = Primes.Program.IsPrime(original);
             //Assert
-            Assert.AreEqual(resultOK, result);
+            Assert.AreEqual(result, resultOK);
         }
     }
 }
